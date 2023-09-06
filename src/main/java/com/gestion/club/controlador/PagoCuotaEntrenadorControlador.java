@@ -16,6 +16,7 @@ import com.gestion.club.modelo.Cuota;
 import com.gestion.club.modelo.Entrenador;
 import com.gestion.club.modelo.PagoCuotaEntrenador;
 import com.gestion.club.servicio.CuotaServicio;
+import com.gestion.club.servicio.EntrenadorServicio;
 import com.gestion.club.servicio.PagoCuotaEntrenadorServicio;
 
 @RestController
@@ -26,11 +27,15 @@ public class PagoCuotaEntrenadorControlador {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaConvertida;
+
+	@Autowired
+	private CuotaServicio cuotaServicio;
+
 	@Autowired
 	private PagoCuotaEntrenadorServicio pagoCuotaEntrenadorServicio;
 
 	@Autowired
-	private CuotaServicio cuotaServicio;
+	private EntrenadorServicio entrenadorServicio;
 
 	@PostMapping("/nuevo/{idCuota}/{idEntrenador}/{nombre}/{apellido}/{importe}/{medioPago}/{fecha}")
 	public PagoCuotaEntrenador nuevoSocioCuota(@PathVariable(value = "idCuota") Long idCuota,
@@ -40,6 +45,13 @@ public class PagoCuotaEntrenadorControlador {
 			@PathVariable(value = "fecha") String fecha) {
 		return this.pagoCuotaEntrenadorServicio.nuevoPagoCuotaEntrenador(idCuota, idEntrenador, nombre, apellido,
 				importe, medioPago, fecha);
+	}
+
+	@GetMapping("/obtenerPorDocumento/{documento}")
+	public Entrenador obtenerPorDocumento(@PathVariable(value = "documento") Long documento) {
+
+		return entrenadorServicio.obtenerEntrenadorPorId(documento);
+
 	}
 
 	@GetMapping("/mostrar")

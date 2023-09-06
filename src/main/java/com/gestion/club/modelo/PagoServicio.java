@@ -24,6 +24,7 @@ public class PagoServicio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_pago_servicio")
 	private Long id;
 
 	@Column

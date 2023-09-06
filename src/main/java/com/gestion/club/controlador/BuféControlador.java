@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gestion.club.modelo.Bufé;
+import com.gestion.club.modelo.Bufe;
 import com.gestion.club.servicio.BuféServicio;
 
 @RestController
@@ -25,22 +25,22 @@ public class BuféControlador {
 	private BuféServicio buféServicio;
 
 	@PostMapping("/nuevo")
-	public Bufé nuevoBufé(@RequestBody Bufé nuevoBufé) {
+	public Bufe nuevoBufé(@RequestBody Bufe nuevoBufé) {
 		return this.buféServicio.nuevoBufé(nuevoBufé);
 	}
 
 	@GetMapping("/mostrar")
-	public Iterable<Bufé> mostrarBufés() {
+	public Iterable<Bufe> mostrarBufés() {
 		return buféServicio.mostrarBufés();
 	}
 
-	@GetMapping("/mostrar/{numero}")
-	public List<Bufé> mostrarCanchasPorNumero(@PathVariable(value = "numero") int numero) {
-		return buféServicio.mostrarBufésPorNumero(numero);
+	@GetMapping("/mostrar/{numeroBufe}")
+	public List<Bufe> mostrarCanchasPorNumero(@PathVariable(value = "numeroBufe") int numeroBufe) {
+		return buféServicio.mostrarBufésPorNumero(numeroBufe);
 	}
 
 	@PostMapping("/modificar")
-	public Bufé modificarBufé(@RequestBody Bufé bufé) {
+	public Bufe modificarBufé(@RequestBody Bufe bufé) {
 		return this.buféServicio.modificarBufé(bufé);
 	}
 

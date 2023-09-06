@@ -15,4 +15,6 @@ public interface EntrenadorServicio {
 
 	Boolean buscarEntrenadorPorId(Long idEntrenador);
 
+	Entrenador obtenerEntrenadorPorId(Long idEntrenador);
+
 }

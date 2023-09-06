@@ -46,6 +46,13 @@ public class JugadorServicioImpl implements JugadorServicio{
 	}
 
 	@Override
+	public Jugador obtenerJugadorPorDocumento(Long idJugador) {
+
+		return this.jugadorRepositorio.findAllByDocumento(idJugador);
+
+	}
+
+	@Override
 	public void eliminarJugador(Long idJugador) {
 
 		jugadorRepositorio.deleteById(idJugador);

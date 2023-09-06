@@ -7,4 +7,5 @@ import com.gestion.club.modelo.Jugador;
 public interface JugadorRepositorio extends JpaRepository<Jugador, Long>{
 
 	Jugador findAllByDocumento(Long documento);
+
 }

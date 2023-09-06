@@ -38,6 +38,13 @@ public class EntrenadorControlador {
 
 	}
 
+	@GetMapping("/obtenerPorDocumento/{documento}")
+	public Entrenador obtenerPorDocumento(@PathVariable(value = "documento") Long documento) {
+
+		return entrenadorServicio.obtenerEntrenadorPorId(documento);
+
+	}
+
 	@PostMapping("/modificar")
 	public Entrenador modificarEntrenador(@RequestBody Entrenador entrenador){
 		return this.entrenadorServicio.modificarEntrenador(entrenador);

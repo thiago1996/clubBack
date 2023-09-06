@@ -18,7 +18,7 @@ import lombok.Data;
 public class Entrenador {
 
 	@Id
-	@Column(unique=true)
+	@Column(name = "documento_entrenador", unique = true)
 	private Long documento;
 	@Column
 	private String nombre;

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gestion.club.modelo.Bufé;
+import com.gestion.club.modelo.Bufe;
 import com.gestion.club.repositorio.BuféRepositorio;
 
 @Service
@@ -17,28 +17,28 @@ public class BuféServicioImpl implements BuféServicio {
 	private BuféRepositorio buféRepositorio;
 
 	@Override
-	public Bufé nuevoBufé(Bufé nuevoBufé) {
+	public Bufe nuevoBufé(Bufe nuevoBufé) {
 		return this.buféRepositorio.save(nuevoBufé);
 	}
 
 	@Override
-	public List<Bufé> mostrarBufés() {
+	public List<Bufe> mostrarBufés() {
 		return buféRepositorio.findAll();
 	}
 
 	@Override
-	public List<Bufé> mostrarBufésPorNumero(int numero) {
+	public List<Bufe> mostrarBufésPorNumero(int numero) {
 
-		return buféRepositorio.findAllByNumero(numero);
+		return buféRepositorio.findAllByNumeroBufe(numero);
 
 	}
 
 	@Override
-	public Bufé modificarBufé(Bufé bufé) {
+	public Bufe modificarBufé(Bufe bufé) {
 
-		Optional<Bufé> buféEncontrado = buféRepositorio.findById(bufé.getId());
+		Optional<Bufe> buféEncontrado = buféRepositorio.findById(bufé.getId());
 		if (buféEncontrado.get() != null) {
-			buféEncontrado.get().setNumero(bufé.getNumero());
+			buféEncontrado.get().setNumeroBufe(bufé.getNumeroBufe());
 
 			return this.nuevoBufé(buféEncontrado.get());
 		}

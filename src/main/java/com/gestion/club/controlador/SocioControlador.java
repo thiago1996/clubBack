@@ -38,6 +38,12 @@ public class SocioControlador {
 		return socioServicio.buscarSocioPorDocumento(documento);
 	}
 
+	@GetMapping("/obtenerPorDocumento/{documento}")
+	public Socio obtenerPorDocumento(@PathVariable(value = "documento") Long documento) {
+
+		return socioServicio.obtenerSocioPorDocumento(documento);
+	}
+
 	@PostMapping("/modificar")
 	public Socio modificarSocio(@RequestBody Socio socio){
 		return this.socioServicio.modificarSocio(socio);

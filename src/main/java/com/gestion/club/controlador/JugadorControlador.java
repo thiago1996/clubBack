@@ -74,11 +74,17 @@ public class JugadorControlador {
 
 	}
 
-		@GetMapping("/buscarPorDocumento/{documento}")
-		public Boolean buscarPorDocumento(@PathVariable(value = "documento") Long documento) {
+	@GetMapping("/buscarPorDocumento/{documento}")
+	public Boolean buscarPorDocumento(@PathVariable(value = "documento") Long documento) {
 
-			return jugadorServicio.buscarJugadorPorDocumento(documento);
-		}
+		return jugadorServicio.buscarJugadorPorDocumento(documento);
+	}
+
+	@GetMapping("/obtenerPorDocumento/{documento}")
+	public Jugador obtenerPorDocumento(@PathVariable(value = "documento") Long documento) {
+
+		return jugadorServicio.obtenerJugadorPorDocumento(documento);
+	}
 
 	@DeleteMapping("/eliminar/{id}")
 	public ResponseEntity<?>eliminarJugador(@PathVariable Long id){

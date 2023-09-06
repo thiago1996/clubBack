@@ -63,4 +63,11 @@ public class SocioServicioImpl implements SocioServicio {
 		return false;
 	}
 
+	@Override
+	public Socio obtenerSocioPorDocumento(Long idSocio) {
+
+		return this.socioRepositorio.findAllByDocumento(idSocio);
+
+	}
+
 }

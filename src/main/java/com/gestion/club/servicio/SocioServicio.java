@@ -10,4 +10,6 @@ public interface SocioServicio {
 	Boolean eliminarSocio(Long idSocio);
 	Boolean buscarSocioPorDocumento(Long idSocio);
 
+	Socio obtenerSocioPorDocumento(Long idSocio);
+
 }

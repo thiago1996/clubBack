@@ -86,4 +86,11 @@ public class EntrenadorServicioImpl implements EntrenadorServicio{
 		return false;
 	}
 
+	@Override
+	public Entrenador obtenerEntrenadorPorId(Long idEntrenador) {
+
+		return this.entrenadorRepositorio.findByDocumento(idEntrenador);
+
+	}
+
 }

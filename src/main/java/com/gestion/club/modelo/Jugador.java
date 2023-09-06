@@ -25,7 +25,7 @@ import lombok.ToString;
 public class Jugador {
 
 	@Id
-	@Column(unique=true)
+	@Column(name = "documento_jugador", unique = true)
 	private Long documento;
 	@Column
 	private String nombre;

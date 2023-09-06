@@ -15,4 +15,6 @@ public interface JugadorServicio {
 	void eliminarJugador(Long idJugador);
 
 	Boolean buscarJugadorPorDocumento(Long idJugador);
+
+	Jugador obtenerJugadorPorDocumento(Long idJugador);
 }

@@ -24,7 +24,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @Entity
 
-public class AlquilerBufé {
+
+public class AlquilerBufe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,7 +45,7 @@ public class AlquilerBufé {
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@JoinColumn(name = "id_bufe", nullable = false)
 	@ToString.Exclude
-	private Bufé bufe;
+	private Bufe bufe;
 
 	public Long getId() {
 		return id;
@@ -78,11 +79,11 @@ public class AlquilerBufé {
 		this.medioPago = medioPago;
 	}
 
-	public Bufé getBufe() {
+	public Bufe getBufe() {
 		return bufe;
 	}
 
-	public void setBufe(Bufé bufe) {
+	public void setBufe(Bufe bufe) {
 		this.bufe = bufe;
 	}
 

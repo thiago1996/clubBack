@@ -2,18 +2,18 @@ package com.gestion.club.servicio;
 
 import java.util.List;
 
-import com.gestion.club.modelo.Bufé;
+import com.gestion.club.modelo.Bufe;
 
 public interface BuféServicio {
 
-	Bufé nuevoBufé(Bufé nuevoBufé);
+	Bufe nuevoBufé(Bufe nuevoBufé);
 
-	List<Bufé> mostrarBufés();
+	List<Bufe> mostrarBufés();
 
-	List<Bufé> mostrarBufésPorNumero(int numero);
+	List<Bufe> mostrarBufésPorNumero(int numero);
 
 
-	Bufé modificarBufé(Bufé bufé);
+	Bufe modificarBufé(Bufe bufé);
 
 	void eliminarBufé(Long idBufé);
 

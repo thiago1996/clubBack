@@ -18,23 +18,23 @@ import lombok.ToString;
 @Entity
 @ToString
 
-public class Bufé {
+public class Bufe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_bufé")
+	@Column(name = "id_bufe")
 	private Long id;
 
 	@Column(unique = true, nullable = false)
-	private int numero;
+	private int numeroBufe;
 
-	public Bufé(Long id, int numero) {
+	public Bufe(Long id, int numero_bufe) {
 		super();
 		this.id = id;
-		this.numero = numero;
+		this.numeroBufe = numero_bufe;
 	}
 
-	public Bufé() {
+	public Bufe() {
 		super();
 	}
 
@@ -46,17 +46,17 @@ public class Bufé {
 		this.id = id;
 	}
 
-	public int getNumero() {
-		return numero;
+	public int getNumeroBufe() {
+		return numeroBufe;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setNumeroBufe(int numero_bufe) {
+		this.numeroBufe = numero_bufe;
 	}
 
 	@Override
 	public String toString() {
-		return "Bufé [id=" + id + ", numero=" + numero + "]";
+		return "Bufe [id=" + id + ", numeroBufe=" + numeroBufe + "]";
 	}
 
 

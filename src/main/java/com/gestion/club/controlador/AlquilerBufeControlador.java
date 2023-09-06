@@ -12,43 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gestion.club.modelo.AlquilerBufé;
-import com.gestion.club.servicio.AlquilerBuféServicio;
+import com.gestion.club.modelo.AlquilerBufe;
+import com.gestion.club.servicio.AlquilerBufeServicio;
 
 @RestController
 @RequestMapping("/alquilerBufe")
 @CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
 // para que la ruta frontend (4200) pueda acceder a nuestro backend en 8080
 
-public class AlquilerBuféControlador {
+public class AlquilerBufeControlador {
 
 	@Autowired
-	private AlquilerBuféServicio alquilerBuféServicio;
+	private AlquilerBufeServicio alquilerBufeServicio;
 
 	@PostMapping("/nuevo")
-	public AlquilerBufé nuevoAlquerBufé(@RequestBody AlquilerBufé nuevoAlquilerBufé) {
-		return alquilerBuféServicio.nuevoAlquilerBufé(nuevoAlquilerBufé);
+	public AlquilerBufe nuevoAlquerBufé(@RequestBody AlquilerBufe nuevoAlquilerBufé) {
+		return alquilerBufeServicio.nuevoAlquilerBufé(nuevoAlquilerBufé);
 	}
 
 	@GetMapping("/mostrar")
-	public List<AlquilerBufé> mostrarAlquileresBufé() {
-		return alquilerBuféServicio.mostrarAlquileresBufés();
+	public List<AlquilerBufe> mostrarAlquileresBufé() {
+		return alquilerBufeServicio.mostrarAlquileresBufés();
 	}
 
 	@PostMapping("/modificar")
-	public AlquilerBufé modificarAlquilerBufé(@RequestBody AlquilerBufé alquilerBufé) {
-		return this.alquilerBuféServicio.modificarAlquilerBufé(alquilerBufé);
+	public AlquilerBufe modificarAlquilerBufé(@RequestBody AlquilerBufe alquilerBufé) {
+		return this.alquilerBufeServicio.modificarAlquilerBufé(alquilerBufé);
 	}
 
 	@PostMapping(value = "/{id}")
 	public void eliminarAlquilerBufé(@PathVariable(value = "id") Long id) {
-		this.alquilerBuféServicio.eliminarAlquilerBufé(id);
+		this.alquilerBufeServicio.eliminarAlquilerBufé(id);
 	}
 
 	@GetMapping("/buscarPorParametros/{fecha}/{idBufe}")
-	public List<AlquilerBufé> buscarBufePorParametros(@PathVariable(value = "fecha") LocalDate fecha,
+	public List<AlquilerBufe> buscarBufePorParametros(@PathVariable(value = "fecha") LocalDate fecha,
 			@PathVariable(value = "idBufe") Long idBufe) {
-		return alquilerBuféServicio.buscarPorParametros(fecha, idBufe);
+		return alquilerBufeServicio.buscarPorParametros(fecha, idBufe);
 	}
 
 }

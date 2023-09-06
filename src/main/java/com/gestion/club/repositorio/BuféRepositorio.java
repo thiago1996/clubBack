@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.gestion.club.modelo.Bufé;
+import com.gestion.club.modelo.Bufe;
 
-public interface BuféRepositorio extends JpaRepository<Bufé, Long> {
+public interface BuféRepositorio extends JpaRepository<Bufe, Long> {
 
-	List<Bufé> findAllByNumero(int numero);
+	List<Bufe> findAllByNumeroBufe(int numeroBufe);
 }

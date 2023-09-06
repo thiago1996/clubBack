@@ -7,25 +7,25 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gestion.club.modelo.AlquilerBufé;
-import com.gestion.club.modelo.Bufé;
-import com.gestion.club.repositorio.AlquilerBuféRepositorio;
+import com.gestion.club.modelo.AlquilerBufe;
+import com.gestion.club.modelo.Bufe;
+import com.gestion.club.repositorio.AlquilerBufeRepositorio;
 
 @Service
 
-public class AlquilerBuféServicioImpl implements AlquilerBuféServicio {
+public class AlquilerBufeServicioImpl implements AlquilerBufeServicio {
 
 	@Autowired
-	private AlquilerBuféRepositorio alquilerBuféRepositorio;
+	private AlquilerBufeRepositorio alquilerBuféRepositorio;
 
 	@Override
-	public AlquilerBufé nuevoAlquilerBufé(AlquilerBufé nuevoAlquilerBufé) {
+	public AlquilerBufe nuevoAlquilerBufé(AlquilerBufe nuevoAlquilerBufé) {
 		return alquilerBuféRepositorio.save(nuevoAlquilerBufé);
 
 	}
 
 	@Override
-	public List<AlquilerBufé> mostrarAlquileresBufés() {
+	public List<AlquilerBufe> mostrarAlquileresBufés() {
 		return alquilerBuféRepositorio.findAll();
 	}
 
@@ -36,18 +36,18 @@ public class AlquilerBuféServicioImpl implements AlquilerBuféServicio {
 	}
 
 	@Override
-	public List<AlquilerBufé> buscarPorParametros(LocalDate fecha, Long idBufe) {
+	public List<AlquilerBufe> buscarPorParametros(LocalDate fecha, Long idBufe) {
 
-		Bufé bufe = new Bufé();
+		Bufe bufe = new Bufe();
 		bufe.setId(idBufe);
 
 		return alquilerBuféRepositorio.findAllByFechaAndBufe(fecha, bufe);
 	}
 
 	@Override
-	public AlquilerBufé modificarAlquilerBufé(AlquilerBufé alquilerBufé) {
+	public AlquilerBufe modificarAlquilerBufé(AlquilerBufe alquilerBufé) {
 
-		Optional<AlquilerBufé> alquilerBuféEncontrado = this.alquilerBuféRepositorio.findById(alquilerBufé.getId());
+		Optional<AlquilerBufe> alquilerBuféEncontrado = this.alquilerBuféRepositorio.findById(alquilerBufé.getId());
 		if (alquilerBuféEncontrado.get() != null) {
 			alquilerBuféEncontrado.get().setFecha(alquilerBufé.getFecha());
 

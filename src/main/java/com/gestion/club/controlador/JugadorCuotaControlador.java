@@ -57,7 +57,7 @@ public class JugadorCuotaControlador {
 	}
 
 	@GetMapping("/buscarPorDocumento/{documento}")
-	public Jugador buscarSocioPorDocumento(@PathVariable(value = "documento") Long documento) {
+	public Jugador buscarJugadorPorDocumento(@PathVariable(value = "documento") Long documento) {
 		return jugadorCuotaServicio.buscarJugadorPorDocumento(documento);
 	}
 

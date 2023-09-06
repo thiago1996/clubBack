@@ -7,4 +7,6 @@ import com.gestion.club.modelo.Entrenador;
 public interface EntrenadorRepositorio extends JpaRepository<Entrenador, Long> {
 
 	Entrenador findAllByDocumento(Long documento);
+
+	Entrenador findByDocumento(Long documento);
 }

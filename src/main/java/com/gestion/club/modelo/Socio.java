@@ -23,7 +23,7 @@ import lombok.ToString;
 public class Socio implements Serializable{
 
 	@Id
-	@Column(unique=true)
+	@Column(name = "documento_socio", unique = true)
 	private Long documento;
 	@Column
 	private String nombre;
@@ -38,55 +38,59 @@ public class Socio implements Serializable{
 	@Column
 	private LocalDate fechaAsociacion;
 
-		public Long getDocumento() {
+	public Long getDocumento() {
 		return documento;
 	}
 
-		public String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-		public String getApellido() {
+	public String getApellido() {
 		return apellido;
 	}
 
-		public LocalDate getFechaNacimiento() {
+	public void setDocumento(Long documento) {
+		this.documento = documento;
+	}
+
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-		public String getDomicilio() {
+	public String getDomicilio() {
 		return domicilio;
 	}
 
-		public Long getTelefono() {
+	public Long getTelefono() {
 		return telefono;
 	}
 
-		public LocalDate getFechaAsociacion() {
+	public LocalDate getFechaAsociacion() {
 		return fechaAsociacion;
 	}
 
-		public void setNombre(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-		public void setApellido(String apellido) {
+	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
 
-		public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-		public void setDomicilio(String domicilio) {
+	public void setDomicilio(String domicilio) {
 		this.domicilio = domicilio;
 	}
 
-		public void setTelefono(Long telefono) {
+	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
 
-		public void setFechaAsociacion(LocalDate fechaAsociacion) {
+	public void setFechaAsociacion(LocalDate fechaAsociacion) {
 		this.fechaAsociacion = fechaAsociacion;
 	}
 

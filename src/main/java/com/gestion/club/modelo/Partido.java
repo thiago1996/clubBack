@@ -29,6 +29,7 @@ public class Partido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_partido")
 	private Long id;
 	@Column
 	private String descripcion;
